@@ -1,7 +1,7 @@
 import pandas as pd
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
-import json
+
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -18,7 +18,7 @@ def Search(dataframe,text):
 @cross_origin()
 def Data():
     data = request.get_json()['search']
-    return json.loads(str(Search(dataframe,data).to_numpy().tolist()))
+    return Search(dataframe,data).to_numpy().tolist()
 
 if __name__=="__main__":
     app.run(debug=True)
