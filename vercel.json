@@ -2,11 +2,11 @@
     "version": 2,
     "builds": [
         {
-            "src": "main_1.py",
+            "src": "main.py",
             "use": "@vercel/python",
             "config": {
                 "env": {
-                    "FLASK_APP": "main_1.py"
+                    "FLASK_APP": "main.py"
                 }
             }
         }
@@ -14,7 +14,7 @@
     "routes": [
         {
             "src": "/.*",
-            "dest": "main_1.py"
+            "dest": "main.py"
         }
     ]
 }
